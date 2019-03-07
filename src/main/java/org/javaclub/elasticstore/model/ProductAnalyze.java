@@ -3,24 +3,25 @@ package org.javaclub.elasticstore.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+import org.springframework.data.elasticsearch.annotations.Setting;
 
-import static org.springframework.data.elasticsearch.annotations.FieldType.Text;
-
-@Document(indexName = "product-store", type = "product_type")
-public class Product {
+@Document(indexName = "product-store-analyze", type = "product_analyze")
+@Setting(settingPath = "/cutom_analizer.json")
+public class ProductAnalyze {
 
     @Id
     private long id;
-    @Field(type = Text)
+    @Field(type = FieldType.Text, searchAnalyzer = "roman-analyzer")
     private String title;
     private long price;
-    @Field(type = Text)
+    @Field(type = FieldType.Text)
     private String description;
 
-    public Product() {
+    public ProductAnalyze() {
     }
 
-    public Product(long id, String title, long price, String description) {
+    public ProductAnalyze(long id, String title, long price, String description) {
         this.id = id;
         this.title = title;
         this.price = price;

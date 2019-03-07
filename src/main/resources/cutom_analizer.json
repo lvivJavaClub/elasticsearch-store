@@ -1,0 +1,17 @@
+{
+  "index": {
+    "analysis": {
+      "analyzer": {
+        "roman-analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        }
+      }
+    }
+  }
+
+}

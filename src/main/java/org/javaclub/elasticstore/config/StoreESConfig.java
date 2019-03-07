@@ -1,6 +1,5 @@
 package org.javaclub.elasticstore.config;
 
-import javafx.scene.NodeBuilder;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
@@ -34,7 +33,6 @@ public class StoreESConfig {
         Settings esSettings = Settings.builder()
                 .put("cluster.name", EsClusterName)
                 .build();
-
 
         TransportClient client = new PreBuiltTransportClient(esSettings);
         client.addTransportAddress(new TransportAddress(InetAddress.getByName(EsHost), EsPort));
