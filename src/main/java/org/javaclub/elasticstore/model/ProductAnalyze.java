@@ -12,10 +12,10 @@ public class ProductAnalyze {
 
     @Id
     private long id;
-    @Field(type = FieldType.Text, searchAnalyzer = "roman-analyzer")
+    @Field(type = FieldType.Text, analyzer = "roman-analyzer")
     private String title;
     private long price;
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, analyzer = "roman-analyzer")
     private String description;
 
     public ProductAnalyze() {

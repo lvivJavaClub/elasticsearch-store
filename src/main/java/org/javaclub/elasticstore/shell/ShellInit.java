@@ -45,7 +45,7 @@ public class ShellInit {
         productRepository.save(new Product(3, "Engine V8", 302, "cooling being does new work"));
         productRepository.save(new Product(4, "Cap V8", 403, "Working with better did"));
 
-        productAnalyzeRepository.save(new ProductAnalyze(1, "Analyze Elasticsearch Booking, Spring", 100, "Cool tool for look book"));
+        productAnalyzeRepository.save(new ProductAnalyze(1, "Analyze Elasticsearch Booking, Spring", 100, "Cool-tool for look book"));
         productAnalyzeRepository.save(new ProductAnalyze(2, "Analyze Book Spring", 200, "New suggestion for looking do springing"));
         productAnalyzeRepository.save(new ProductAnalyze(3, "Analyze Engine V8", 302, "cooling being does new work"));
         productAnalyzeRepository.save(new ProductAnalyze(4, "Analyze Cap V8", 403, "Working with better did"));

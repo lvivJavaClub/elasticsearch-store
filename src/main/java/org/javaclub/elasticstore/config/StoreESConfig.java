@@ -19,23 +19,23 @@ import java.net.InetAddress;
 public class StoreESConfig {
 
     @Value("${elasticsearch.host}")
-    private String EsHost;
+    private String esHost;
 
     @Value("${elasticsearch.port}")
-    private int EsPort;
+    private int esPort;
 
     @Value("${elasticsearch.clustername}")
-    private String EsClusterName;
+    private String esClusterName;
 
     @Bean
     public Client client() throws Exception {
 
         Settings esSettings = Settings.builder()
-                .put("cluster.name", EsClusterName)
+                .put("cluster.name", esClusterName)
                 .build();
 
         TransportClient client = new PreBuiltTransportClient(esSettings);
-        client.addTransportAddress(new TransportAddress(InetAddress.getByName(EsHost), EsPort));
+        client.addTransportAddress(new TransportAddress(InetAddress.getByName(esHost), esPort));
         return client;
     }
 
